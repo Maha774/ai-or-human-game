@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f1e6e6;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* black background with a dark red "fog" glow at the top and bottom */
+  background:
+    radial-gradient(circle at 50% 0%, #4a0000 0%, transparent 55%),
+    radial-gradient(circle at 50% 100%, #2b0000 0%, transparent 50%),
+    #050000;
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+  padding: 24px;
+}
+
+/* ---------- spooky headings ---------- */
+h1,
+h2 {
+  font-family: "Creepster", cursive;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #ff1a1a;
+  text-shadow: 0 0 8px #ff0000, 0 0 24px #8b0000;
+}
+
+h1 {
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin: 0 0 12px;
+  animation: flicker 4s infinite;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 8px;
+}
+
+/* ---------- the cards ---------- */
+section {
+  background: #0d0606;
+  border: 2px solid #8b0000;
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.25), inset 0 0 30px rgba(139, 0, 0, 0.2);
+}
+
+/* this class hides things */
+.hidden {
+  display: none;
+}
+
+#counter {
+  color: #b86a6a;
+  margin: 0 0 14px;
+  letter-spacing: 1px;
+}
+
+#text-box {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  text-align: left;
+  background: #170a0a;
+  border-left: 4px solid #ff1a1a;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#choices {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ---------- buttons ---------- */
+button {
+  font-family: "Creepster", cursive;
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  padding: 10px 24px;
+  border: 2px solid #ff1a1a;
+  border-radius: 10px;
+  background: #1a0000;
+  color: #ff4d4d;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #ff1a1a;
+  color: #050000;
+  box-shadow: 0 0 18px #ff0000;
+}
+
+button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:disabled:hover {
+  background: #1a0000;
+  color: #ff4d4d;
+}
+
+/* ---------- feedback after answering ---------- */
+#feedback {
+  margin-top: 18px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#feedback.correct {
+  color: #8dff8d;
+}
+
+#feedback.wrong {
+  color: #ff5c5c;
+}
+
+/* ---------- final score ---------- */
+#final-score {
+  font-family: "Creepster", cursive;
+  font-size: 5rem;
+  color: #ff1a1a;
+  text-shadow: 0 0 12px #ff0000, 0 0 35px #8b0000;
+  margin: 0;
+}
+
+/* ---------- flickering light effect on the title ---------- */
+@keyframes flicker {
+  0%, 18%, 22%, 62%, 64%, 100% {
+    opacity: 1;
+  }
+  20%, 63% {
+    opacity: 0.4;
+  }
+}
+
+/* people who don't like animations won't see the flicker */
+@media (prefers-reduced-motion: reduce) {
+  h1 {
+    animation: none;
+  }
+  button {
+    transition: none;
+  }
+}
+
+/* small phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+  #choices {
+    flex-direction: column;
+  }
+}

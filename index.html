@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI or Human?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+
+    <!-- Screen 1: start -->
+    <section id="start-screen">
+      <h1>💀 AI or Human? 💀</h1>
+      <p>10 short texts. Can you tell which ones a robot wrote?</p>
+      <button id="start-btn">Enter if you dare 🎃</button>
+    </section>
+
+    <!-- Screen 2: the game -->
+    <section id="game-screen" class="hidden">
+      <p id="counter"></p>
+      <div id="text-box"></div>
+      <div id="choices">
+        <button id="btn-ai">🤖 AI</button>
+        <button id="btn-human">🧑 Human</button>
+      </div>
+      <p id="feedback"></p>
+      <button id="next-btn" class="hidden">Next</button>
+    </section>
+
+    <!-- Screen 3: score -->
+    <section id="end-screen" class="hidden">
+      <h2>Your score</h2>
+      <p id="final-score"></p>
+      <p id="result-line"></p>
+      <button id="copy-btn">Copy my score</button>
+      <button id="restart-btn">Play again</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
